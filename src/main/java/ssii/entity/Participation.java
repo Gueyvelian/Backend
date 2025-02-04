@@ -1,10 +1,12 @@
 package ssii.entity;
 
-import jakarta.persistence.*;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
+
 
 @Entity
 @Getter
@@ -12,21 +14,21 @@ import lombok.*;
 @NoArgsConstructor
 @RequiredArgsConstructor // lombok, pour générer un constructeur avec les champs @NonNull
 @ToString
-public class Personne {
 
+public class Participation {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer matricule;
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Integer matricule;
 
     @NotBlank
     @NonNull // lombok
-    private String nom;
+    private Integer ID;
     @NotBlank
     @NonNull // lombok
-    private String prenom;
+    private String role;
     @NotBlank
     @NonNull // lombok
-    private String poste;
-
-
+    private Float pourcentge;
 }
+
+
