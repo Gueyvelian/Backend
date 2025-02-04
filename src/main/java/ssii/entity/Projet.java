@@ -22,5 +22,6 @@ public class Projet {
     @NotBlank
     @NonNull // lombok
     private LocalDate debut;
+
     private java.time.LocalDate fin;
 }
