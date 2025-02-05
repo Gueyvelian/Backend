@@ -24,9 +24,11 @@ private Integer id;
     private Float pourcentage;
 
     @ManyToOne
+    @NonNull
     private Personne personne;
 
     @ManyToOne
+    @NonNull
     private Projet projet;
 
 }
