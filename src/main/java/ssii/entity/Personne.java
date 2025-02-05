@@ -28,5 +28,10 @@ public class Personne {
     @NonNull // lombok
     private String poste;
 
+    @ManyToOne
+    private Personne superieur;
+
+    @OneToMany(mappedBy = "superieur")
+    private List<Personne> subordone = new ArrayList<>();
 
 }
