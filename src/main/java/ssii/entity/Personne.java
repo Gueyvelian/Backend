@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+
+import java.util.ArrayList;
+import java.util.List;
 import lombok.*;
 
 @Entity
@@ -33,5 +36,8 @@ public class Personne {
 
     @OneToMany(mappedBy = "superieur")
     private List<Personne> subordone = new ArrayList<>();
+
+    @OneToMany
+    private Participation participation;
 
 }
