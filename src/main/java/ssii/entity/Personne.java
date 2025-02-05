@@ -35,7 +35,7 @@ public class Personne {
     private Personne superieur;
 
     @OneToMany(mappedBy = "superieur")
-    private List<Personne> subordone = new ArrayList<>();
+    private List<Personne> subordone;
 
     @OneToMany(mappedBy = "personne")
     @NonNull

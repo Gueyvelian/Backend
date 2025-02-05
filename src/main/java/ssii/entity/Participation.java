@@ -14,8 +14,9 @@ import lombok.*;
 
 public class Participation {
     @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     @NotBlank
     @NonNull // lombok
     private String role;

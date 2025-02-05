@@ -30,7 +30,7 @@ public class Projet {
 
     private java.time.LocalDate fin;
 
-    @OneToMany(mappedBy = "participation")
+    @OneToMany(mappedBy = "projet")
     @NonNull
     private List<Participation> participations = new ArrayList<>();
 }
