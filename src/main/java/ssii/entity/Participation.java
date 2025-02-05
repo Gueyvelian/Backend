@@ -29,6 +29,7 @@ private Integer matricule;
     @NotBlank
     @NonNull // lombok
     private Float pourcentge;
+
 }
 
 
