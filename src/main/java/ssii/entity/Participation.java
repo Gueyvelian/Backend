@@ -17,18 +17,19 @@ public class Participation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotBlank
     @NonNull // lombok
     private String role;
-    @NotBlank
+
     @NonNull // lombok
     private Float pourcentage;
 
-    @ManyToOne
+    @ToString.Exclude
+    @ManyToOne(optional = false)
     @NonNull
     private Personne personne;
 
-    @ManyToOne
+    @ToString.Exclude
+    @ManyToOne(optional = false)
     @NonNull
     private Projet projet;
 

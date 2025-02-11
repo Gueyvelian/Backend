@@ -21,23 +21,28 @@ public class Personne {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer matricule;
 
-    @NotBlank
+    @Column(nullable = false)
     @NonNull // lombok
     private String nom;
-    @NotBlank
+
+    @Column(nullable = false)
     @NonNull // lombok
     private String prenom;
-    @NotBlank
+
+    @Column(nullable = false)
     @NonNull // lombok
     private String poste;
 
+    @ToString.Exclude
     @ManyToOne
     private Personne superieur;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "superieur")
-    private List<Personne> subordone;
+    private List<Personne> subordone = new ArrayList<>();
 
-    @OneToMany(mappedBy = "personne")
+    @ToString.Exclude
+    @OneToMany(mappedBy = "personne", cascade = CascadeType.ALL)
     @NonNull
     private List<Participation> participations = new ArrayList<>();
 
